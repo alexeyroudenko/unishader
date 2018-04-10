@@ -1,0 +1,46 @@
+{
+  "name": "gl-toy",
+  "version": "2.0.3",
+  "description": "Create quick WebGL demo's using glslify",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo toy/index.js -t glslify | garnish"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "repository": "stackgl/gl-toy",
+  "keywords": [
+    "glslify",
+    "webgl",
+    "shader",
+    "shaders",
+    "boilerplate",
+    "kickstart",
+    "shadertoy",
+    "ecosystem:stackgl"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "a-big-triangle": "^1.0.0",
+    "babelify": "^6.0.2",
+    "canvas-fit": "^1.2.0",
+    "gl-context": "^0.1.1",
+    "gl-shader": "^4.0.1",
+    "mouse-position": "^2.0.1"
+  },
+  "devDependencies": {
+    "budo": "^4.0.0",
+    "garnish": "^2.1.3",
+    "glslify": "^2.1.2",
+    "glslify-hex": "^2.0.1"
+  },
+  "files": [
+    "lib",
+    "LICENSE",
+    "index.js",
+    "HISTORY.md"
+  ]
+}
