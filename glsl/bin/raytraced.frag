@@ -1,8 +1,8 @@
 precision mediump float;
 #define GLSLIFY 1
 
-uniform float iGlobalTime;
-uniform vec3  iResolution;
+uniform float u_time;
+uniform vec2  u_resolution;
 
 vec2 doModel(vec3 p);
 
@@ -267,7 +267,7 @@ float snoise(vec4 v)
   }
 
 vec2 doModel(vec3 p) {
-  float r  = 1.0 + snoise(vec4(p, iGlobalTime * 0.0)) * 0.0;
+  float r  = 1.0 + snoise(vec4(p, u_time * 1.2)) * .2;
   float d  = length(p) - r;
   float id = 0.0;
 
@@ -292,10 +292,10 @@ void main() {
   vec3 color = vec3(0.0);
   vec3 ro, rd;
 
-  float rotation = iGlobalTime;
+  float rotation = u_time;
   float height   = 2.5;
   float dist     = 4.0;
-  orbitCamera(rotation, height, dist, iResolution.xy, ro, rd);
+  orbitCamera(rotation, height, dist, u_resolution.xy, ro, rd);
 
   vec2 t = calcRayIntersection(ro, rd);
   if (t.x > -0.5) {

@@ -1,7 +1,7 @@
 precision mediump float;
 
-uniform float iGlobalTime;
-uniform vec3  iResolution;
+uniform float u_time;
+uniform vec2  u_resolution;
 
 vec2 doModel(vec3 p);
 
@@ -13,7 +13,7 @@ vec2 doModel(vec3 p);
 #pragma glslify: noise = require('glsl-noise/simplex/4d')
 
 vec2 doModel(vec3 p) {
-  float r  = 1.0 + noise(vec4(p, iGlobalTime * 1.2)) * .2;
+  float r  = 1.0 + noise(vec4(p, u_time * 1.2)) * .2;
   float d  = length(p) - r;
   float id = 0.0;
 
@@ -38,10 +38,10 @@ void main() {
   vec3 color = vec3(0.0);
   vec3 ro, rd;
 
-  float rotation = iGlobalTime;
+  float rotation = u_time;
   float height   = 2.5;
   float dist     = 4.0;
-  camera(rotation, height, dist, iResolution.xy, ro, rd);
+  camera(rotation, height, dist, u_resolution.xy, ro, rd);
 
   vec2 t = raytrace(ro, rd);
   if (t.x > -0.5) {
