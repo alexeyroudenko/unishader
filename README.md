@@ -3,11 +3,13 @@
 
 ## using Sublime + glslViewer
 
-https://raw.githubusercontent.com/alexeyroudenko/unishader/master/docs/01_glslViewer.png
+
+![image](https://raw.githubusercontent.com/alexeyroudenko/unishader/master/docs/01_glslViewer.png)
 
 ## using gl-toy:
 
-https://raw.githubusercontent.com/alexeyroudenko/unishader/master/docs/02_www.png
+![image](https://raw.githubusercontent.com/alexeyroudenko/unishader/master/docs/02_www.png)
+
 
 npm install
 
@@ -18,7 +20,7 @@ npm start
 
 (atom + https://atom.io/packages/glsl-preview module)
 
-https://raw.githubusercontent.com/alexeyroudenko/unishader/master/docs/03_atom_module_glsl.png
+![image](https://raw.githubusercontent.com/alexeyroudenko/unishader/master/docs/03_atom_module_glsl.png)
 
 cd docs/experiments
 
